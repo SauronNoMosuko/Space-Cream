@@ -1,0 +1,295 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --ff-heading: 'Staatliches';
+  --ff-body: 'Palanquin';
+
+  --color-primary: #8E9AAF;
+  --color-secondary: #CBC0D3;
+  --fc-body: #23053A;
+  --fc-bag: #4A4E69;
+  --bg-bag: #FEEAFA;
+  --bg-body: #EFF1FF;
+  
+
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: 1.6rem;
+  background: var(--bg-body);
+}
+
+h1 {
+  animation: topdown 1s backwards;
+  animation-delay: 300ms;
+}
+
+h1,
+h2 {
+  font-family: var(--ff-heading);
+}
+
+img {
+  max-width: 100%;
+}
+
+#header {
+  text-align: center;
+  margin-bottom: 1.4rem;
+  background: var(--color-primary);
+  padding: 3.2rem 0 2.9rem;
+  animation: topdown 1s backwards;
+}
+
+header p {
+  text-align: center;
+  padding-bottom: 6.3rem;
+  font-size: 1.9rem;
+  line-height: 2.5rem;
+  color: var(--fc-body);
+  max-width: 32rem;
+  margin: 0 auto;
+  animation: topdown 1s backwards;
+  animation-delay: 700ms;
+}
+
+span {
+  display: none;
+}
+
+#logo_img {
+  margin-bottom: 3.2rem;
+  
+}
+
+
+#logo_img > img:hover {
+  filter: brightness(0.4);
+  filter: saturate(3);
+  transform: scale(1.1);
+}
+
+#logo_text {
+  background: var(--color-secondary);
+  padding: 8px 0;
+  letter-spacing: 0.05em;
+  color: white;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+main {
+  max-width: 100%;
+  margin: 0 auto 6rem;
+  animation: downtop reverse 1s;
+  padding: 0 4rem;
+}
+
+.images {
+  display: grid;
+  gap: 3.2rem;
+}
+
+.image {
+  position: relative;
+}
+
+
+.image:hover {
+  transform: scale(1.1);
+  opacity: 0.6;
+}
+
+.image h2 {
+  position: absolute;
+  background: var(--bg-bag);
+  color: var(--fc-bag);
+  border-radius: 20px;
+  padding: 0.5rem 2.4rem;
+  top: 1.6rem;
+  right: 1.6rem;
+  font-size: 2rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+  animation: downtop reverse 1s backwards;
+  animation-delay: 400ms;
+}
+
+.image img {
+  border-radius: 2rem;
+  object-fit: cover;
+  width: 100%;
+  height: 45rem;
+}
+
+.image {
+  transition: all 200ms;
+  transition-timing-function: ease;
+}
+
+.image img.small {
+  height: 25rem;
+}
+
+footer p {
+  color: #4A4E69;
+  text-align: center;
+  display: none;
+  margin-top: 5rem;
+  font-size: 2rem;
+  font-family: var(--ff-body);
+}
+
+footer p a {
+  text-decoration: none;
+  color: #4A4E69;
+  font-weight: bold;
+}
+
+footer p a:hover {
+  color: #313444;
+}
+
+main div:nth-child(5) {
+  display: none;
+}
+
+main div:nth-child(6) {
+  display: none;
+}
+
+
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  100% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+@media (min-width: 700px) {
+  
+  main {
+    margin: 6.4rem 9.8rem;
+    max-width: 100%;
+  }
+  
+  .images {
+    grid-template-areas: 
+    'A B'
+    'D B'
+    'D C'
+    ;
+  }
+
+  .image:nth-child(1) {
+    grid-area: A;
+  }
+
+  .image:nth-child(2) {
+    grid-area: B;
+  }
+
+  .image:nth-child(3) {
+    grid-area: C;
+  }
+
+  .image:nth-child(4) {
+    grid-area: D;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  body {
+    display: flex;
+    color: white;
+  }
+
+  .logo_img > img {
+    width: 100%;
+  }
+
+  header {
+    width: 50rem;
+    height: 100vh;
+    background: var(--color-primary);
+  }
+
+  header p {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    padding: 0 2rem;
+  }
+
+  span {
+    display: inline;
+  }
+
+  main {
+    margin: 6.4rem 9.8rem;
+    max-width: 100%;
+  }
+  
+  .images {
+    grid-template-areas: 
+    'A B C'
+    'D B E'
+    'D F E';
+  }
+
+  .image:nth-child(1) {
+    grid-area: A;
+  }
+
+  .image:nth-child(2) {
+    grid-area: B;
+  }
+
+  .image:nth-child(3) {
+    grid-area: C;
+  }
+
+  .image:nth-child(4) {
+    grid-area: D;
+  }
+
+  .image:nth-child(5) {
+    grid-area: E;
+  }
+
+  .image:nth-child(6) {
+    grid-area: F;
+  }
+
+  footer p {
+    display: block;
+  }
+
+  main div:nth-child(5) {
+    display: block;
+  }
+  
+  main div:nth-child(6) {
+    display: block;
+  }
+}
